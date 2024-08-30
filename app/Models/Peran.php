@@ -13,6 +13,11 @@ class Peran extends Model
 
     public function cast()
     {
-        return $this->hasOne(Cast::class, 'id', 'cast_id');
+        return $this->belongsTo(Cast::class, 'cast_id');
+    }
+
+    public function film()
+    {
+        return $this->belongsTo(Film::class, 'film_id', 'id');
     }
 }
